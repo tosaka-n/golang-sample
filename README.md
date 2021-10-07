@@ -1,3 +1,5 @@
 ## Usage
 - docker-compose up -d
-- docker exec -it app_golang bash
+- exec
+  - docker exec -it app_golang bash
+  - docker-compose exec app bash
