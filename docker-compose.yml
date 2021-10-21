@@ -8,3 +8,7 @@ services:
       - 18888:18888
     volumes:
       - ./src:/go/src/app
+    working_dir: /go/src/app/server
+    command:
+      bash -c 'go build server.go &&
+      ./server'
