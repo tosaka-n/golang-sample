@@ -37,6 +37,26 @@ Content-Disposition: form-data; name="thumbnail"; filename="photo.png"
 Content-Type: image/png
 
 ```
-ファイルを書き換えて
+### Content-Type指定
+ファイルを書き換えて `part.Set` で `Content-Type` を指定する
 ```
 go run multi-file-v2.go
+User-Agent: Go-http-client/1.1
+
+--5c9941fe0b1fc83e2bdfa39ae6a092093c68848b2149de1fa43b7b98df86
+Content-Disposition: form-data; name="name"
+
+Michael Jackson
+--5c9941fe0b1fc83e2bdfa39ae6a092093c68848b2149de1fa43b7b98df86
+Content-Disposition: form-data; name="thumbnail"; filename="photo.jpg"
+Content-Type: image/jpeg
+```
+
+### Cookieの送受信
+
+```
+$ go run server_cookie.go > server.log
+```
+```
+go run coockie.go
+```
