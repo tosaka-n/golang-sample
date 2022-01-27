@@ -5,6 +5,7 @@ import (
    "log"
    "net/http"
    "net/http/httputil"
+   "time"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -15,6 +16,9 @@ func handler(w http.ResponseWriter, r *http.Request) {
     }
     fmt.Println(string(dump))
     fmt.Println("*--*--*--*--*--*--*--*")
+
+    // 重い処理シミュレート
+    time.Sleep(5 * time.Second)
     fmt.Fprintf(w, "<html><body>Good evening!</body></html>\n")
 }
 
